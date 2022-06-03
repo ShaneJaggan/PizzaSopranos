@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+{% block title %}Place Order{% endblock %}
+{% block body %}
+    <h1>Order your {{ pizza.name }} pizza</h1>
+    {{ form_start(pizzaForm) }}
+        {{ form_widget(pizzaForm) }}
+
+    <button type="submit" class="btn btn-primary">Order</button>
+    {{ form_end(pizzaForm) }}
+{% endblock %}

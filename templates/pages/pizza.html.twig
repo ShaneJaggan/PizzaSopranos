@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block title %}Pizza's {% endblock %}
+{% block body %}
+    {% for pizza in pizza %}
+        <div class="col-sm-6 col-md-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <img class="img-fluid center-block" src={{ asset(pizza.img)}} alt="image">
+                    <div class="card-title mb-3">Pizza {{ pizza.name }}</div>
+                    <a href={{ path('app_orderPizza', {pizza: pizza.id}) }}><button class="btn btn-primary">Order</button></a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

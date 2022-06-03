@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+{% block title %}Orders{% endblock %}
+{% block body %}
+    <h1>Orders</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>City</th>
+            <th>Adress</th>
+            <th>Zipcode</th>
+            <th>Pizza</th>
+            <th>Size</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for order in orders %}
+            <tr>
+                <td>{{ order.fname }}</td>
+                <td>{{ order.sname }}</td>
+                <td>{{ order.city }}</td>
+                <td>{{ order.adress }}</td>
+                <td>{{ order.zipcode }}</td>
+                <td>{{ order.pizza.name }}</td>
+                <td>{{ order.size.name }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
